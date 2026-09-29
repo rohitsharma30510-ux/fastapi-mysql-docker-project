@@ -1,0 +1,4 @@
+#our application needs 3 packages to run, fastapi, uvicorn and mysql-connector-python
+fastapi  #-- Creates api
+uvicorn   #--- Runs fastapi
+mysql-connector-python  #-- connects mysql to python

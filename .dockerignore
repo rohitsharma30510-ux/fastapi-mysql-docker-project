@@ -1,0 +1,4 @@
+.env
+.git                   #is a hidden folder created when you run:git init, it contains all the information about your git repository
+__pycache__            #python creates this folder automatically when python run your code, it contains the compiled version of your python code
+*.pyc                  #is a Python compiled-bytecode file.

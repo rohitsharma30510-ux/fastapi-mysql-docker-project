@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+
+# this is a hidden folder created when you run: git init, it contains all the information about your git repository 
+# and this will not saved in github
