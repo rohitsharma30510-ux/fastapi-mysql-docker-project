@@ -19,6 +19,13 @@ def home():
         "status": "running"
     }
 
+@app.get("/health")
+def health_check():
+    return {
+        "status": "healthy",
+        "application": "FastAPI"
+    }
+
 @app.get("/users")
 def get_users():
     connection = get_db_connection()
