@@ -2,23 +2,29 @@ services:
 
   app:
     build: .
-    container_name: fastapi-project
+    container_name: fastapi-container
     ports:
       - "8000:8000"
     depends_on:
       - mysql
+    networks:
+      - app-net
 
   mysql:
     image: mysql:8.0
     container_name: mysql-db
     environment:
-      environment:
-    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    MYSQL_DATABASE: ${MYSQL_DATABASE}
-    MYSQL_USER: ${MYSQL_USER}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - app-net
 
 volumes:
   mysql_data:
+
+networks:
+  app-net:
